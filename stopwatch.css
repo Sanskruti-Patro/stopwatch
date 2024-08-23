@@ -1,0 +1,61 @@
+/* Mixin's */
+@mixin transition {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+@mixin corners($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  -khtml-border-radius: $radius;
+}
+
+body {
+  background: #6951e0;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
+  height: 100%;
+}
+
+.wrapper {
+  width: 800px;
+  margin: 30px auto;
+  color: #fff;
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 2.6em;
+  text-transform: uppercase;
+}
+
+#seconds,
+#tens {
+  font-size: 2.2em;
+}
+
+button {
+  @include corners(5px);
+  background: #6951e0;
+  color: #fff;
+  border: solid 2px #fff;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.3em;
+  padding: 18px 10px;
+  width: 180px;
+  margin: 10px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    @include transition;
+    background: #fff;
+    border: solid 1px #fff;
+    color: #6951e0;
+  }
+}
